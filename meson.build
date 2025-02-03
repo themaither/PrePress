@@ -17,3 +17,5 @@ exe = executable('prepress', ['prepress.c', 'export.c'],
   install : true, dependencies: [adw], link_depends: [blueprints])
 
 test('basic', exe)
+copyres = find_program('copyres.sh')
+run_command(copyres)
