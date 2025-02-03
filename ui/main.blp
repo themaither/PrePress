@@ -1,0 +1,140 @@
+using Gtk 4.0;
+using Adw 1;
+
+menu main_menu {
+  item {
+    label: _("Preferences");
+    action: "a.b";
+    target: "4";
+  }
+}
+
+Box select_images_view {
+  valign: center;
+  halign: center;
+  orientation: vertical;
+  margin-bottom: 10;
+  margin-top: 10;
+  spacing: 10;
+
+  Image {
+    icon-name: "insert-image-symbolic";
+    pixel-size: 196;
+    margin-bottom: 30;
+  }
+
+  Label {
+    styles [
+      "title-2"
+    ]
+
+    label: _("Select Images to compose them");
+  }
+
+  Button {
+    label: _("Select images");
+
+    styles [
+      "suggested-action"
+    ]
+
+    action-name: "app.file_request";
+    action-target: "()";
+  }
+}
+
+Box select_layout_view {
+  orientation: vertical;
+  valign: center;
+  halign: center;
+  spacing: 10;
+  width-request: 640;
+  height-request: 400;
+
+  Label {
+    label: _("Select layout");
+
+    styles [
+      "title-1"
+    ]
+  }
+
+  Box files_view {
+    orientation: vertical;
+  }
+
+  ScrolledWindow {
+    
+
+    Grid layout_buttons {
+      valign: center;
+      halign: center;
+      row-spacing: 10;
+      column-spacing: 10;
+      row-homogeneous: true;
+      column-homogeneous: true;
+    }
+  }
+}
+
+Box export_view {
+  valign: center;
+  halign: center;
+
+  Button {
+    action-name: "app.export";
+    action-target: "()";
+    valign: center;
+    halign: center;
+
+    Box {
+      margin-bottom: 20;
+      margin-end: 20;
+      margin-start: 20;
+      margin-top: 20;
+      halign: center;
+      spacing: 15;
+
+      Label {
+        label: _("Export all images and photos for free");
+      }
+
+      Image {
+        icon-name: "document-save-symbolic";
+        pixel-size: 32;
+      }
+    }
+
+    styles [
+      "title-1",
+      "suggested-action"
+    ]
+  }
+}
+
+Adw.Window window {
+  width-request: 640;
+  height-request: 400;
+
+  Box {
+    orientation: vertical;
+
+    HeaderBar {
+      [end]
+      MenuButton {
+        menu-model: main_menu;
+      }
+
+      title-widget: Adw.WindowTitle {
+        title: _("PrePress");
+        subtitle: _("Made by __mister_s__");
+      };
+    }
+
+    Stack stack {
+      vexpand: true;
+      transition-type: slide_left_right;
+      transition-duration: 500;
+    }
+  }
+}
