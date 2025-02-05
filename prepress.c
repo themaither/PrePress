@@ -46,7 +46,6 @@ void switch_to_layout_view(globals_t *data) {
         GtkLabel *label = GTK_LABEL(gtk_label_new(name));
         gtk_box_append(view, GTK_WIDGET(label));
     }
-    add_button_to_layout_thingy(data, "Grid 1x1", CRAP_SITE "ui/icons/grid-1.svg", LAY_T_GRID_1);
     add_button_to_layout_thingy(data, "Grid 2x2", CRAP_SITE "ui/icons/grid-2.svg", LAY_T_GRID_2);
     add_button_to_layout_thingy(data, "Grid 3x3", CRAP_SITE "ui/icons/grid-3.svg", LAY_T_GRID_3);
     add_button_to_layout_thingy(data, "Half", CRAP_SITE "ui/icons/stack.svg", LAY_T_STACK);

@@ -18,7 +18,6 @@
 #define TEMP_SHIT "/tmp/prepress/"
 
 typedef enum {
-    LAY_T_GRID_1,
     LAY_T_GRID_2,
     LAY_T_GRID_3,
     LAY_T_STACK,

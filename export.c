@@ -64,8 +64,6 @@ void export_image_grid_3(globals_t *data) {
 
 void export_image(globals_t *data) {
     switch (data->itype) {
-    case LAY_T_GRID_1:
-        break;
     case LAY_T_GRID_2:
         export_image_grid_2(data);
         break;
